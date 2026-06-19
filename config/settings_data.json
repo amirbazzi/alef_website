@@ -1,7 +1,7 @@
-﻿{
+{
   "current": {
     "header_design": "inline",
-    "logo": "shopify:\/\/files\/Logo_png_Alef_beirut.png",
+    "logo": "shopify:\/\/shop_images\/kalles_logo_placeholder.png",
     "logo_width": 150,
     "logos_width": 150,
     "logo_mb_width": 120,
@@ -159,7 +159,7 @@
           "de84a111-3ed0-40a2-b86a-1e81488e9bff": {
             "type": "image",
             "settings": {
-              "image_child": "shopify:\/\/files\/Logo_png_Alef_beirut.png",
+              "image_child": "shopify:\/\/shop_images\/kalles_logo_placeholder.png",
               "img_width": 150,
               "img_width_mb": 120,
               "mgb": 34,
