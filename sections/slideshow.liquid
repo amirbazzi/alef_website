@@ -152,9 +152,11 @@
                                 <span class="lazyloadt4s-loader is-bg-img t4s-d-none t4s-d-md-block" style="background: {{ url_img }}"></span>
                             {%- endif -%} {% endcomment %}
 
-                        {%- else -%} 
+                        {%- elsif bk_stts.image_cdn_url != blank -%}
+                            <img src="{{ bk_stts.image_cdn_url }}" class="t4s-img-as-bg -t4s-lz--fadeIn t4s-slide-{{ bk_stts.animate_slide }}" alt="{{ shop.name }}" style="width:100%;height:100%;object-fit:cover;display:block;" loading="eager">
+                        {%- else -%}
                         {%- capture current -%}{% cycle 1, 2 %}{%- endcapture -%}
-                            {{ 'lifestyle-' | append: current | placeholder_svg_tag: 't4s-placeholder-svg t4s-svg-bg1' }}  
+                            {{ 'lifestyle-' | append: current | placeholder_svg_tag: 't4s-placeholder-svg t4s-svg-bg1' }}
                         {%- endif -%}
 
                         {%- capture append_bg_content_style -%}--bg-content:{{ bg_content }};--content-pd:{{ bk_stts.content_pd_tb }}px {{ bk_stts.content_pd_lr }}px;--content-pd-tb:{{ bk_stts.content_pd_tb_tb }}px {{ bk_stts.content_pd_lr_tb }}px;--content-pd-mb:{{ bk_stts.content_pd_tb_mb }}px {{ bk_stts.content_pd_lr_mb }}px;{%- endcapture -%}
@@ -735,6 +737,12 @@
             "id": "image_mb",
             "label": "Mobile image (optional)",
             "info": "750 x 1100px .jpg recommended. If none is set, desktop image will be used."
+          },
+          {
+            "type": "text",
+            "id": "image_cdn_url",
+            "label": "Image CDN URL (optional)",
+            "info": "Direct image URL — use when image_picker is not available."
           },
           {
             "type": "select",
